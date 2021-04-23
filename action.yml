@@ -1,0 +1,10 @@
+name: 'PlantUML generate'
+description: 'Generate images from PlantUML text diagrams'
+inputs:
+  apply_style:
+    description: 'The path of the style to apply to each diagram'
+    required: false
+    default: ''
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
