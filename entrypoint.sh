@@ -3,8 +3,6 @@ set -e # stops the execution if a command or pipeline has an error
 
 style_path=$1
 
-echo $style_path
-
 function generate_png () {
     # copy all png files from the .puml file directory to the current directory
     # NOTE: `cp` fails if the path does not exists so we redirect stderr to /dev/null 
