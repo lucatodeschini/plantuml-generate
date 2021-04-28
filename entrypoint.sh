@@ -4,7 +4,7 @@ set -e # stops the execution if a command or pipeline has an error
 style_path=$1
 
 function generate_png () {
-    # Copy all png files from the .puml file directory to the current directory
+    # copy all png files from the .puml file directory to the current directory
     # NOTE: `cp` fails if the path does not exists so we redirect stderr to /dev/null 
     #        and ignore the return code with the nop (:), otherwise the whole script fails due to the -e flag set above
     cp -f ${path}/*png ./ 2>/dev/null || :
@@ -42,12 +42,12 @@ default_branch=$(git remote show origin | awk '/HEAD branch/ {print $NF}');
 # get hash of last commit on default branch
 last_commit_default_branch=$(git log -1 remotes/origin/$default_branch | grep commit | sed 's/commit //g')
 
-#get hash of last commit on current branch
+# get hash of last commit on current branch
 last_commit_branch=$(git log -1 | grep commit | sed 's/commit //g')
 
 echo "default branch: $default_branch, HEAD of default branch: $last_commit_default_branch, HEAD of current branch: $last_commit_branch"
 
-# Get list of directories that have changes
+# get list of directories that have changes
 for dir in $(git diff --dirstat $last_commit_default_branch $last_commit_branch | cut -d '%' -f 2)
 do
     echo "Changes detected on folder ${dir}:"
