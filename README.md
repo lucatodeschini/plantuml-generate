@@ -2,7 +2,7 @@
 
 This action generates images based on the PlantUML text diagrams.
 
-It generates the images "in palce" alongside the `.puml` definition.
+It generates the images "in place" alongside the `.puml` definition.
 
 ## Inputs
 
